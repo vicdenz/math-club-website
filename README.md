@@ -26,7 +26,9 @@ pip install -r requirements.txt
 
 --> Move into the directory where we have the backend project files :
 
+```bash
 cd math_club
+```
 
 --> To run the backend Math Club Website, use :
 
@@ -43,8 +45,21 @@ cd ..
 cd frontend
 ```
 
+--> Install all frontend dependencies, use :
+
+```bash
+npm install
+
+```
+
 --> To run the frontend React Website, use :
 
+```bash
 npm run dev
+```
 
 > Then, the web server will be started at http://localhost:3000/
+
+```
+
+```

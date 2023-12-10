@@ -1,57 +1,50 @@
-# Math Club Website
+## Math Club Website
 
-### Cloning the repository
+---
 
---> Clone the repository using the command below :
-
-```bash
-git clone https://github.com/divanov11/Django-React-NotesApp.git
-
-```
-
---> Move into the directory where we have the project files :
-
-```bash
-cd Django-React-NotesApp
-
-```
+#### Creating the virtual environment
 
 --> Create a virtual environment :
 
 ```bash
-# If you are on Windows
-virtualenv env
-# If you are on Linux or Mac
-python -m venv env
+virtualenv venv
 ```
 
 --> Activate the virtual environment :
 
 ```bash
-# If you are on Windows
-.\env\Scripts\activate
-# If you are on Linux or Mac
-source env/bin/activate
+. env/bin/activate
 ```
 
-#
+--> Install all pip packages from requirements.txt :
 
-### Running the App
+```bash
+pip install -r requirements.txt
+```
 
---> To run the Notes App, we use :
+#### Running the website
+
+--> Move into the directory where we have the backend project files :
+
+cd math_club
+
+--> To run the backend Math Club Website, use :
 
 ```bash
 python manage.py runserver
 ```
 
-> ⚠ Then, the development server will be started at http://127.0.0.1:8000/
+> The development server will be started at http://127.0.0.1:8000/
 
-#
+--> Then move into the directory where we have the frontend project files :
 
-### App Preview :
+```bash
+cd ..
+cd frontend
+```
 
-<div align="center">
-<img width="50%" src="https://www.linkpicture.com/q/Notes.png"/>
-</div>
+--> To run the frontend React Website, use :
 
-#
+npm run dev
+
+> Then, the web server will be started at http://localhost:3000/

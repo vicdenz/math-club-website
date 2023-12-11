@@ -1,6 +1,4 @@
-## Math Club Website
-
----
+# Math Club Website
 
 #### Creating the virtual environment
 
@@ -59,7 +57,3 @@ npm run dev
 ```
 
 > Then, the web server will be started at http://localhost:3000/
-
-```
-
-```

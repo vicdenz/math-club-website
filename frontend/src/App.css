@@ -1,42 +1,116 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-family: "Kollektif";
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navbar {
+	background-color: rgba(255, 255, 255, 0);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-link:hover {
+	color: var(--light-green);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav-link:focus {
+	color: var(--green);
 }
 
-.card {
-  padding: 2em;
+.nav-content {
+	font-family: "Kollektif";
 }
 
-.read-the-docs {
-  color: #888;
+.nav-content p,
+.nav-content a {
+	color: var(--green);
+	font-size: 20px;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.nav-logo {
+	color: var(--green);
+	font-family: "Proxima Nova";
+	font-size: 34px;
+	font-weight: bold;
+}
+
+.nav-logo:hover {
+	color: var(--green);
+}
+
+.nav-logo span {
+	color: var(--dark-green);
+}
+
+.navbar-toggler:focus {
+	box-shadow: none !important;
+}
+
+.background {
+	background-color: var(--off-white);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.blob {
+	position: absolute;
+	opacity: 0.15;
+	width: 100vh;
+	height: 100vh;
+}
+
+.footer {
+	margin-top: auto !important;
+	background-color: var(--dark-green);
+}
+
+.img-white {
+	filter: brightness(0) invert(1);
+}
+
+.card-title {
+	font-size: 42px;
+	font-family: "Kollektif";
+	font-weight: bold;
+	color: var(--green);
+}
+
+.event {
+	background-color: var(--green);
+	border-radius: 50px;
+}
+
+.event-date {
+	height: 100%;
+	background-color: var(--off-white);
+	color: var(--green);
+	font-weight: bold;
+}
+
+.event-day {
+	font-size: 30px;
+	position: relative;
+	top: 8px;
+}
+
+.event-month {
+	font-size: 17px;
+	position: relative;
+	top: -5px;
+}
+
+.event-info {
+	color: var(--off-white);
+	font-size: 17px;
+}
+
+.event-info p {
+	font-weight: bold;
+	font-size: 20px;
 }

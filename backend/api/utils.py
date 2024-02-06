@@ -1,6 +1,8 @@
 from rest_framework import status
 from rest_framework.response import Response
 
+from django.contrib.auth.models import User
+
 from .models import Event, Contest, UserContest
 from .serializers import EventSerializer, ContestSerializer, UserContestSerializer
 
@@ -21,7 +23,21 @@ def get_contests(request):
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
 def sign_up(request):
-	return Response("Hello from Signup Page")
+	data = request.data
+	username = data.get('username')
+	password = data.get('password')
+
+	if not username or not password:
+		return Response({'error': 'Both username and password are required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+	# Check if the username is unique
+	if User.objects.filter(username=username).exists():
+		return Response({'error': 'Username is already taken.'}, status=status.HTTP_400_BAD_REQUEST)
+
+	# Create a new user
+	user = User.objects.create_user(username=username, password=password, first_name=data.get('first_name'), last_name=data.get('last_name'))
+
+	return Response({'success': 'User registered successfully.'}, status=status.HTTP_201_CREATED)
 
 def get_user_contests(request):
 	user = request.user

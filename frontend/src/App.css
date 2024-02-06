@@ -1,8 +1,32 @@
+body {
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
 #root {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
 	font-family: "Kollektif";
+}
+
+.content {
+	margin-bottom: 4rem;
+}
+
+.background {
+	top: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	position: absolute;
+	background-color: var(--white);
+	z-index: -1;
+	overflow: visible;
+}
+
+.bg-img {
+	position: fixed;
+	aspect-ratio: 1 / 1;
+	opacity: 0.15;
 }
 
 .navbar {
@@ -17,6 +41,16 @@
 	color: var(--green);
 }
 
+.footer-list .nav-link {
+	color: var(--white);
+	padding: 0px;
+}
+
+.footer-list a.active {
+	color: var(--white) !important;
+	font-weight: 700 !important;
+}
+
 .nav-content {
 	font-family: "Kollektif";
 }
@@ -29,45 +63,50 @@
 	font-style: normal;
 }
 
+.logo {
+	aspect-ratio: 45 / 55;
+}
+
 .nav-logo {
+	height: 55px;
+}
+
+.nav-title {
 	color: var(--green);
 	font-family: "Proxima Nova";
 	font-size: 34px;
 	font-weight: bold;
 }
 
-.nav-logo:hover {
+.nav-title:hover {
 	color: var(--green);
 }
 
-.nav-logo span {
+.footer-logo {
+	height: 90px;
+}
+
+.nav-title span {
 	color: var(--dark-green);
+}
+
+.footer-title {
+	color: var(--white);
+	font-family: "Proxima Nova";
+	font-size: 30px;
+}
+
+.footer-title p {
+	height: auto;
 }
 
 .navbar-toggler:focus {
 	box-shadow: none !important;
 }
 
-.background {
-	background-color: var(--off-white);
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-}
-
-.blob {
-	position: absolute;
-	opacity: 0.15;
-	width: 100vh;
-	height: 100vh;
-}
-
 .footer {
 	margin-top: auto !important;
-	background-color: var(--dark-green);
+	background-color: var(--green);
 }
 
 .img-white {
@@ -75,42 +114,47 @@
 }
 
 .card-title {
-	font-size: 42px;
+	font-size: 48px;
 	font-family: "Kollektif";
 	font-weight: bold;
 	color: var(--green);
 }
 
-.event {
-	background-color: var(--green);
+.card-body {
 	border-radius: 50px;
 }
 
-.event-date {
+.card-date {
 	height: 100%;
 	background-color: var(--off-white);
 	color: var(--green);
 	font-weight: bold;
 }
 
-.event-day {
+.card-day {
 	font-size: 30px;
 	position: relative;
 	top: 8px;
 }
 
-.event-month {
+.card-month {
 	font-size: 17px;
 	position: relative;
 	top: -5px;
 }
 
-.event-info {
+.card-description {
+	background-color: var(--green);
 	color: var(--off-white);
 	font-size: 17px;
 }
 
-.event-info p {
+.card-description p {
 	font-weight: bold;
 	font-size: 20px;
+}
+
+.help {
+	font-size: 21px;
+	color: var(--green);
 }

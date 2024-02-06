@@ -16,12 +16,10 @@ function Navbar() {
 					<div className="d-flex align-items-center">
 						<img
 							src="/logo.png"
-							width="45"
-							height="55"
-							className="d-inline-block align-top"
+							className="d-inline-block align-top logo nav-logo"
 							alt="Logo"
 						/>
-						<p className="nav-logo mb-0 ms-2">
+						<p className="nav-title mb-0 ms-2">
 							<span>RHHS</span> Math Club
 						</p>
 					</div>
@@ -46,11 +44,7 @@ function Navbar() {
 								<Link to="/profile" className="nav-link">
 									Profile
 								</Link>
-								<Link
-									to="/logout"
-									className="nav-link"
-									onClick={logoutUser}
-								>
+								<Link className="nav-link" onClick={logoutUser}>
 									Logout
 								</Link>
 							</>

@@ -21,16 +21,15 @@ export const AuthProvider = ({ children }) => {
 	);
 	let [loading, setLoading] = useState(true);
 
-	let loginUser = async (e) => {
-		e.preventDefault();
+	let loginUser = async (userData) => {
 		let response = await fetch("http://127.0.0.1:8000/api/token/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				username: e.target.username.value,
-				password: e.target.password.value,
+				username: userData.username,
+				password: userData.password,
 			}),
 		});
 		let data = await response.json();
@@ -50,6 +49,7 @@ export const AuthProvider = ({ children }) => {
 		setAuthTokens(null);
 		setUser(null);
 		localStorage.removeItem("authTokens");
+		navigate("/");
 	};
 
 	let updateToken = async () => {
@@ -88,7 +88,7 @@ export const AuthProvider = ({ children }) => {
 			updateToken();
 		}
 
-		let intervalDuration = 1000 * 60 * 10; // 10 minutes
+		let intervalDuration = 1000 * 60 * 4; // 4 minutes
 
 		let interval = setInterval(() => {
 			if (authTokens) {

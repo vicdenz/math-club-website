@@ -28,24 +28,29 @@ function App() {
 		<>
 			<Router>
 				<AuthProvider>
-					<Background />
+					{/* <Background /> */}
 					<Navbar />
-					<Routes>
-						<Route exact path="/" element={<HomePage />} />
-						<Route path="/about-us" element={<AboutUsPage />} />
-						<Route path="/contact" element={<ContactPage />} />
-						<Route path="/sign-up" element={<SignUpPage />} />
-						<Route path="/login" element={<LoginPage />} />
+					<div id="body">
+						<Routes>
+							<Route exact path="/" element={<HomePage />} />
+							<Route path="/about-us" element={<AboutUsPage />} />
+							<Route path="/contact" element={<ContactPage />} />
+							<Route path="/sign-up" element={<SignUpPage />} />
+							<Route path="/login" element={<LoginPage />} />
 
-						<Route element={<PrivateRoute />}>
-							<Route
-								path="/dashboard"
-								element={<DashboardPage />}
-							/>
-							<Route path="/profile" element={<ProfilePage />} />
-						</Route>
-					</Routes>
-					<Footer />
+							<Route element={<PrivateRoute />}>
+								<Route
+									path="/dashboard"
+									element={<DashboardPage />}
+								/>
+								<Route
+									path="/profile"
+									element={<ProfilePage />}
+								/>
+							</Route>
+						</Routes>
+						<Footer />
+					</div>
 				</AuthProvider>
 			</Router>
 		</>

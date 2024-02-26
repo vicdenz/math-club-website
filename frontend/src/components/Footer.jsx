@@ -1,9 +1,15 @@
+import React, { useContext } from "react";
+
 import { Navbar as NavBar, Nav, Container } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
+import AuthContext from "../context/AuthContext";
+
 function Footer() {
+	let { user, logoutUser } = useContext(AuthContext);
+
 	return (
-		<NavBar className="footer p-5">
+		<NavBar className="footer p-4">
 			<Container fluid>
 				{/* Logo and Footer Title */}
 				<NavBar.Brand as={Link} to="/" className="me-0 text-center">
@@ -32,12 +38,26 @@ function Footer() {
 						<NavLink to="/contact" className="nav-link">
 							Contact
 						</NavLink>
-						<NavLink to="/dashboard" className="nav-link">
-							Dashboard
-						</NavLink>
-						<NavLink to="/profile" className="nav-link">
-							Profile
-						</NavLink>
+
+						{user ? (
+							<>
+								<NavLink to="/dashboard" className="nav-link">
+									Dashboard
+								</NavLink>
+								<NavLink to="/profile" className="nav-link">
+									Profile
+								</NavLink>
+							</>
+						) : (
+							<>
+								<NavLink to="/sign-up" className="nav-link">
+									Sign Up
+								</NavLink>
+								<NavLink to="/login" className="nav-link">
+									Login
+								</NavLink>
+							</>
+						)}
 					</Nav>
 				</NavBar>
 			</Container>

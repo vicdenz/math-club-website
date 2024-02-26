@@ -17,7 +17,7 @@ const CardItem = ({ align, datetime, name, info }) => {
 
 	let content = [
 		<div
-			className="col-3 col-lg-2 p-0 card-date d-flex flex-column justify-content-center align-items-center"
+			className="col-3 col-lg-2 card-date d-flex flex-column justify-content-center align-items-center"
 			style={borderStyles[alignIndex]}
 		>
 			<p className="card-day mb-0" style={dateShiftStyle[alignIndex]}>
@@ -41,7 +41,7 @@ const CardItem = ({ align, datetime, name, info }) => {
 	}
 
 	return (
-		<div className="row card-body p-0 ms-3 mb-3 align-items-center">
+		<div className="d-flex flex-row card-body mb-3 align-items-center">
 			{content}
 		</div>
 	);

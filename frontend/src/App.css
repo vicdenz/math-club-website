@@ -3,6 +3,7 @@ body {
 	overflow-x: hidden;
 	overflow-y: scroll;
 	background-color: var(--off-white);
+	min-height: 100vh;
 }
 
 #root {
@@ -10,7 +11,8 @@ body {
 }
 
 #body {
-	margin-top: 8rem;
+	margin-top: 101px;
+	margin-bottom: 5rem;
 }
 
 .content {
@@ -42,7 +44,7 @@ body {
 	background-color: var(--bg-lighter-green);
 	z-index: 1;
 	/* border-bottom: 2px solid var(--dark-green); */
-	border-radius: 10px;
+	border-radius: 0 0 10px 10px;
 }
 
 .navbar {
@@ -169,6 +171,17 @@ body {
 	color: var(--green);
 }
 
+.help a {
+	font-size: 25px;
+	color: var(--off-white);
+	font-family: "Kollektif";
+	font-weight: bold;
+	text-decoration: none;
+
+	border-radius: 50px;
+	background-color: var(--green);
+}
+
 .header h1 {
 	font-size: 58px;
 	font-family: "Kollektif";
@@ -176,19 +189,16 @@ body {
 	color: var(--dark-green);
 }
 
-.header h4 {
+.title {
+	margin: 3rem;
+	margin-bottom: 2rem;
+}
+
+.home-text {
 	font-size: 28px;
 	font-family: "Kollektif";
 	color: var(--green);
 }
-
-.title {
-	margin-bottom: 2rem;
-}
-
-/* .schedule {
-	margin: 0 2rem;
-} */
 
 .schedule p {
 	font-size: 20px;
@@ -198,6 +208,30 @@ body {
 	margin: 0;
 }
 
-.team-img {
+.team-cover {
+	height: 100%;
+	position: absolute;
 	width: 100%;
+	z-index: -1;
+}
+
+.team-img {
+	height: 100%;
+	width: 100%;
+
+	background-image: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0) 10%,
+			var(--off-white)
+		),
+		url("/team.jpeg");
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+
+	/* object-fit: cover;
+	object-position: 50% 60%; */
+
+	border-radius: 0 0 50px 50px;
 }

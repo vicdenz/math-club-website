@@ -39,10 +39,10 @@ const HomePage = () => {
 	};
 
 	return (
-		<div className="d-flex flex-column align-self-center mx-5 mb-5">
-			<div className="title mt-2">
+		<div className="d-flex flex-column mx-5">
+			<div className="title">
 				<Header title="RHHS Math Club">
-					<span>
+					<span className="home-text">
 						Unlocking Math's Wonders: Where Inclusivity and
 						Friendship Count, and Everyone's Welcome!
 					</span>
@@ -76,18 +76,23 @@ const HomePage = () => {
 				))}
 			</Card>
 
-			<Card align="start" colWidth={8} title="Need Math Help?">
-				<div className="help">
+			<Card align="start" colWidth={8} title="Looking To Join?">
+				<div className="help d-flex flex-column">
 					<p>
 						Are you struggling with math? Or do you simply want to
 						learn something new? If you answered yes to any of those
 						questions then you've come to the right place!
 					</p>
-					<p className="mb-0">
+					<p className="mb-4">
 						Whether it be simple algebra or complex calculus, our
 						talented team of tutors and executives are here to help!
 						Sign up to become a tutee!
 					</p>
+					<a href="/contact" className="col-7 align-self-end py-2">
+						<p className="text-center m-0">
+							Click Here To Join Math Club!
+						</p>
+					</a>
 				</div>
 			</Card>
 		</div>

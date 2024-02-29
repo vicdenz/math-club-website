@@ -9,7 +9,7 @@ function Navbar() {
 	let { user, logoutUser } = useContext(AuthContext);
 
 	return (
-		<div class="fixed-navbar">
+		<div className="fixed-navbar">
 			<NavBar collapseOnSelect expand="md" className="d-flex flex-column">
 				<Container className="d-flex justify-content-between align-self-center p-0">
 					<NavBar.Brand

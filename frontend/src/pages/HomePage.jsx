@@ -1,16 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
-import AuthContext from "../context/AuthContext";
+import React, { useState, useEffect } from "react";
+import { getData } from "../utils/Requests.jsx";
 
-import { Container } from "react-bootstrap";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import CardItem from "../components/CardItem.jsx";
-import { getData } from "../utils/Requests.jsx";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
 	let [events, setEvents] = useState([]);
 	let [contests, setContests] = useState([]);
-	let { authTokens } = useContext(AuthContext);
 
 	useEffect(() => {
 		getData("events", setEvents);
@@ -40,7 +38,7 @@ const HomePage = () => {
 
 	return (
 		<div className="d-flex flex-column mx-5">
-			<div className="title">
+			<div className="mt-5 mb-4">
 				<Header title="RHHS Math Club">
 					<span className="home-text">
 						Unlocking Math's Wonders: Where Inclusivity and
@@ -49,7 +47,7 @@ const HomePage = () => {
 				</Header>
 			</div>
 
-			<Card align="start" title="Upcoming Events">
+			<Card align="start" colWidth={4} title="Upcoming Events">
 				{events.map((event) => (
 					<CardItem
 						key={event.id}
@@ -61,7 +59,7 @@ const HomePage = () => {
 					/>
 				))}
 			</Card>
-			<Card align="end" title="Upcoming Contests">
+			<Card align="end" colWidth={4} title="Upcoming Contests">
 				{contests.map((contest) => (
 					<CardItem
 						key={contest.id}
@@ -76,8 +74,8 @@ const HomePage = () => {
 				))}
 			</Card>
 
-			<Card align="start" colWidth={8} title="Looking To Join?">
-				<div className="help d-flex flex-column">
+			<Card align="start" colWidth={6} title="Looking To Join?">
+				<div className="d-flex flex-column card-p">
 					<p>
 						Are you struggling with math? Or do you simply want to
 						learn something new? If you answered yes to any of those
@@ -88,10 +86,11 @@ const HomePage = () => {
 						talented team of tutors and executives are here to help!
 						Sign up to become a tutee!
 					</p>
-					<a href="/contact" className="col-7 align-self-end py-2">
-						<p className="text-center m-0">
-							Click Here To Join Math Club!
-						</p>
+					<a
+						href="/contact"
+						className="nav-link card-link col-7 align-self-end py-2 text-center"
+					>
+						Click Here To Join Math Club!
 					</a>
 				</div>
 			</Card>

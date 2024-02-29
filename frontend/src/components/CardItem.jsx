@@ -32,7 +32,7 @@ const CardItem = ({ align, datetime, name, info }) => {
 			style={borderStyles[1 - alignIndex]}
 		>
 			<p className="card-name m-0">{name}</p>
-			<span className="card-content fst-italic">{info}</span>
+			<span className="fst-italic">{info}</span>
 		</div>,
 	];
 
@@ -41,7 +41,7 @@ const CardItem = ({ align, datetime, name, info }) => {
 	}
 
 	return (
-		<div className="d-flex flex-row card-body mb-3 align-items-center">
+		<div className="d-flex flex-row card-item mb-3 align-items-center">
 			{content}
 		</div>
 	);

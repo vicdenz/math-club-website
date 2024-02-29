@@ -3,16 +3,18 @@ body {
 	overflow-x: hidden;
 	overflow-y: scroll;
 	background-color: var(--off-white);
-	min-height: 100vh;
+	min-height: 100%;
 }
 
 #root {
 	font-family: "Kollektif";
+	color: var(--green);
 }
 
 #body {
 	margin-top: 101px;
 	margin-bottom: 5rem;
+	min-height: 100vh;
 }
 
 .content {
@@ -41,7 +43,7 @@ body {
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-color: var(--bg-lighter-green);
+	background-color: var(--bg-light-green);
 	z-index: 1;
 	/* border-bottom: 2px solid var(--dark-green); */
 	border-radius: 0 0 10px 10px;
@@ -135,9 +137,18 @@ body {
 }
 
 .card-body {
+	width: 100%;
+}
+
+.card-item {
 	border-radius: 50px;
 	color: var(--off-white);
 	background-color: var(--green);
+	width: 100%;
+}
+
+.card-p {
+	font-size: 21px;
 }
 
 .card-date {
@@ -166,12 +177,7 @@ body {
 	font-size: 20px;
 }
 
-.help {
-	font-size: 21px;
-	color: var(--green);
-}
-
-.help a {
+.card-link {
 	font-size: 25px;
 	color: var(--off-white);
 	font-family: "Kollektif";
@@ -180,6 +186,12 @@ body {
 
 	border-radius: 50px;
 	background-color: var(--green);
+	border: 2px solid var(--green);
+}
+
+.card-link:hover {
+	color: var(--green);
+	background-color: var(--off-white);
 }
 
 .header h1 {
@@ -189,15 +201,8 @@ body {
 	color: var(--dark-green);
 }
 
-.title {
-	margin: 3rem;
-	margin-bottom: 2rem;
-}
-
 .home-text {
 	font-size: 28px;
-	font-family: "Kollektif";
-	color: var(--green);
 }
 
 .schedule p {
@@ -208,30 +213,35 @@ body {
 	margin: 0;
 }
 
-.team-cover {
-	height: 100%;
-	position: absolute;
-	width: 100%;
-	z-index: -1;
-}
-
 .team-img {
 	height: 100%;
 	width: 100%;
 
-	background-image: linear-gradient(
+	background-image: url("/team.jpeg");
+	/* background-image: linear-gradient(
 			to bottom,
 			rgba(255, 255, 255, 0) 10%,
 			var(--off-white)
 		),
-		url("/team.jpeg");
+		url("/team.jpeg"); */
 
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center bottom;
+	background-position: center center;
 
-	/* object-fit: cover;
-	object-position: 50% 60%; */
+	box-shadow: color-mix(in srgb, var(--light-green), transparent 15%) 0px 5px
+		15px 0px;
 
-	border-radius: 0 0 50px 50px;
+	border-radius: 50px;
+}
+
+.message-form {
+	border: 10px solid var(--dark-green);
+	border-radius: 20px;
+	background-color: var(--lighter-green);
+	font-size: 21px;
+}
+
+.form-control {
+	color: var(--dark-green);
 }

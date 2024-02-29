@@ -39,6 +39,7 @@ export const AuthProvider = ({ children }) => {
 			setUser(jwtDecode(data.access));
 			localStorage.setItem("authTokens", JSON.stringify(data));
 
+			console.log("Hello");
 			navigate("/");
 		} else {
 			alert("Something went wrong!");
@@ -49,7 +50,6 @@ export const AuthProvider = ({ children }) => {
 		setAuthTokens(null);
 		setUser(null);
 		localStorage.removeItem("authTokens");
-		navigate("/");
 	};
 
 	let updateToken = async () => {

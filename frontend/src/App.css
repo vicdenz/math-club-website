@@ -11,6 +11,10 @@ body {
 	color: var(--green);
 }
 
+p {
+	margin-bottom: 0px !important;
+}
+
 #body {
 	margin-top: 101px;
 	margin-bottom: 5rem;
@@ -61,12 +65,16 @@ body {
 	color: var(--green);
 }
 
-.footer-list .nav-link {
+.footer-links {
+	border-left: 2px solid var(--white);
+}
+
+.footer-routes .nav-link {
 	color: var(--white);
 	padding: 0px;
 }
 
-.footer-list a.active {
+.footer-routes a.active {
 	color: var(--white) !important;
 	font-weight: 700 !important;
 }
@@ -130,7 +138,7 @@ body {
 }
 
 .card-title {
-	font-size: 46px;
+	font-size: 44px;
 	font-family: "Kollektif";
 	font-weight: bold;
 	color: var(--green);
@@ -217,13 +225,7 @@ body {
 	height: 100%;
 	width: 100%;
 
-	background-image: url("/team.jpeg");
-	/* background-image: linear-gradient(
-			to bottom,
-			rgba(255, 255, 255, 0) 10%,
-			var(--off-white)
-		),
-		url("/team.jpeg"); */
+	background-image: url("/images/team.jpeg");
 
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -236,12 +238,79 @@ body {
 }
 
 .message-form {
-	border: 10px solid var(--dark-green);
+	border: 6px solid var(--dark-green);
 	border-radius: 20px;
 	background-color: var(--lighter-green);
 	font-size: 21px;
 }
 
-.form-control {
+form .form-control {
+	border: 1px solid var(--light-gray);
+	box-shadow: none;
+}
+
+form .form-control:focus {
+	border-color: var(--light-gray);
+	box-shadow: none;
+}
+
+form .form-control::placeholder {
+	color: var(--gray);
+	font-style: italic;
+}
+
+form #charCount {
+	color: var(--gray);
+	font-size: 15px;
+}
+
+.contact-btn {
+	font-family: "Kollektif";
+	background-color: var(--dark-green);
+	border: 2px solid var(--dark-green) !important;
+	font-size: 19px;
+}
+
+.contact-btn:hover {
 	color: var(--dark-green);
+	background-color: var(--off-white);
+}
+
+.contact-btn:focus:active {
+	background-color: var(--dark-green);
+}
+
+.contact-p {
+	font-size: 28px;
+}
+
+.icon-link {
+	font-family: "Kollektif";
+	font-size: 28px;
+	font-weight: bold;
+	color: var(--off-white);
+	background-color: var(--green);
+	border: 0 !important;
+	border-radius: 20px;
+	text-decoration: none;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.icon-link:hover {
+	color: var(--off-white);
+	background-color: var(--light-green);
+}
+
+.icon-link:focus:active {
+	color: var(--off-white);
+	background-color: var(--light-green);
+}
+
+.icon-img {
+	width: 100%;
+	height: 100%;
+}
+
+.contact-info {
+	font-size: 21px;
 }

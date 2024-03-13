@@ -1,55 +1,56 @@
 @font-face {
 	font-family: "Kollektif";
-	src: url("/kollektif/kollektif-bold-italic.ttf") format("truetype");
+	src: url("/fonts/kollektif/kollektif-bold-italic.ttf") format("truetype");
 	font-weight: bold;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: "Kollektif";
-	src: url("/kollektif/kollektif-bold.ttf") format("truetype");
+	src: url("/fonts/kollektif/kollektif-bold.ttf") format("truetype");
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Kollektif";
-	src: url("/kollektif/kollektif-italic.ttf") format("truetype");
+	src: url("/fonts/kollektif/kollektif-italic.ttf") format("truetype");
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: "Kollektif";
-	src: url("/kollektif/kollektif.ttf") format("truetype");
+	src: url("/fonts/kollektif/kollektif.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova";
-	src: url("/proxima-nova/proxima-nova.ttf") format("truetype");
+	src: url("/fonts/proxima-nova/proxima-nova.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova";
-	src: url("/proxima-nova/proxima-nova-italic.ttf") format("truetype");
+	src: url("/fonts/proxima-nova/proxima-nova-italic.ttf") format("truetype");
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: "Proxima Nova";
-	src: url("/proxima-nova/proxima-nova-bold.ttf") format("truetype");
+	src: url("/fonts/proxima-nova/proxima-nova-bold.ttf") format("truetype");
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Proxima Nova";
-	src: url("/proxima-nova/proxima-nova-bold-italic.ttf") format("truetype");
+	src: url("/fonts/proxima-nova/proxima-nova-bold-italic.ttf")
+		format("truetype");
 	font-weight: bold;
 	font-style: italic;
 }
@@ -73,4 +74,5 @@
 	--bg-light-green: #e8f2ef;
 	--off-white: #f8faf8;
 	--gray: #a6a6a6;
+	--light-gray: #dedede;
 }

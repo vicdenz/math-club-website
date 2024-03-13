@@ -16,6 +16,12 @@ class Contest(models.Model):
 	deadline = models.DateField()
 	description = models.CharField(max_length=500)
 
+class Message(models.Model):
+	first_name = models.CharField(max_length=40)
+	last_name = models.CharField(max_length=60)
+	email = models.EmailField()
+	message = models.CharField(max_length=200)
+
 class UserContest(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	contest = models.ForeignKey(Contest, on_delete=models.CASCADE)

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { getData } from "../utils/Requests.jsx";
+import { getData } from "utils/Requests.jsx";
 
-import Header from "../components/Header";
-import Card from "../components/Card";
-import CardItem from "../components/CardItem.jsx";
+import Header from "components/Header";
+import Card from "components/Card";
+import CardItem from "components/CardItem.jsx";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -76,7 +76,7 @@ const HomePage = () => {
 
 			<Card align="start" colWidth={6} title="Looking To Join?">
 				<div className="d-flex flex-column card-p">
-					<p>
+					<p className="mb-2">
 						Are you struggling with math? Or do you simply want to
 						learn something new? If you answered yes to any of those
 						questions then you've come to the right place!
@@ -86,12 +86,13 @@ const HomePage = () => {
 						talented team of tutors and executives are here to help!
 						Sign up to become a tutee!
 					</p>
-					<a
-						href="/contact"
+					<Link
+						reloadDocument
+						to="/contact"
 						className="nav-link card-link col-7 align-self-end py-2 text-center"
 					>
 						Click Here To Join Math Club!
-					</a>
+					</Link>
 				</div>
 			</Card>
 		</div>

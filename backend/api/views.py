@@ -24,6 +24,17 @@ def get_routes(request):
 			"Description": "All contests available."
 		},
 		{
+			"Endpoint": "/contact/",
+			"Method": "POST",
+			"Body": {
+				"first_name": "string",
+				"last_name": "string",
+				"email": "string",
+				"message": "string",
+			},
+			"Description": "Saves a message sent from the user."
+		},
+		{
 			"Endpoint": "/sign-up/",
 			"Method": "POST",
 			"Body": {
@@ -74,6 +85,11 @@ def events_view(request):
 @api_view(["GET"])
 def contests_view(request):
 	return get_contests(request)
+
+# Post Message
+@api_view(["POST"])
+def contact_view(request):
+	return post_message(request)
 
 # Signup
 @api_view(["POST"])

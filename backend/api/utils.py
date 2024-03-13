@@ -3,7 +3,7 @@ from rest_framework.response import Response
 
 from django.contrib.auth.models import User
 
-from .models import Event, Contest, UserContest
+from .models import Event, Contest, UserContest, Message
 from .serializers import EventSerializer, ContestSerializer, UserContestSerializer
 
 from django.utils import timezone
@@ -22,6 +22,14 @@ def get_contests(request):
 	
 	return Response(serializer.data, status=status.HTTP_200_OK)
 
+def post_message(request):
+	data = request.data
+
+	# Create a new message
+	message = Message.objects.create(**data)
+
+	return Response({'success': 'Message saved successfully.'}, status=status.HTTP_201_CREATED)
+
 def sign_up(request):
 	data = request.data
 	username = data.get('username')
@@ -35,7 +43,7 @@ def sign_up(request):
 		return Response({'error': 'Username is already taken.'}, status=status.HTTP_400_BAD_REQUEST)
 
 	# Create a new user
-	user = User.objects.create_user(username=username, password=password, first_name=data.get('first_name'), last_name=data.get('last_name'))
+	user = User.objects.create_user(**data)
 
 	return Response({'success': 'User registered successfully.'}, status=status.HTTP_201_CREATED)
 

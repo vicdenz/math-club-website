@@ -8,7 +8,7 @@ const Background = () => {
 		<div className="background">
 			<img
 				className="bg-img"
-				src="svg/blob.svg"
+				src="svg/bg/blob.svg"
 				alt="Background Blob"
 				style={{
 					top: "-26%",
@@ -21,7 +21,7 @@ const Background = () => {
 			></img>
 			<img
 				className="bg-img"
-				src="svg/blob.svg"
+				src="svg/bg/blob.svg"
 				alt="Background Blob"
 				style={{
 					top: "25%",
@@ -34,7 +34,7 @@ const Background = () => {
 			></img>
 			<img
 				className="bg-img"
-				src="svg/pi.svg"
+				src="svg/bg/pi.svg"
 				alt="Background Pi"
 				style={{
 					top: "10%",
@@ -48,7 +48,7 @@ const Background = () => {
 			></img>
 			<img
 				className="bg-img"
-				src="svg/sigma.svg"
+				src="svg/bg/sigma.svg"
 				alt="Background Sigma"
 				style={{
 					bottom: "-10%",
@@ -62,7 +62,7 @@ const Background = () => {
 			></img>
 			<img
 				className="bg-img"
-				src="svg/blob.svg"
+				src="svg/bg/blob.svg"
 				alt="Background Blob"
 				style={{
 					bottom: "-100%",

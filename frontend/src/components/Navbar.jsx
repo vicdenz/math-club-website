@@ -3,10 +3,12 @@ import React, { useContext } from "react";
 import { Navbar as NavBar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import AuthContext from "../context/AuthContext";
+import AuthContext from "context/AuthContext";
+
+import getSource from "utils/getSource";
 
 function Navbar() {
-	let { user, logoutUser } = useContext(AuthContext);
+	// let { user, logoutUser } = useContext(AuthContext);
 
 	return (
 		<div className="fixed-navbar">
@@ -19,19 +21,25 @@ function Navbar() {
 					>
 						<div className="d-flex align-items-center">
 							<img
-								src="/logo.png"
+								src={getSource("/images/logo.png")}
 								className="d-inline-block align-top nav-logo"
-								alt="Logo"
 							/>
 							<p className="nav-title mb-0 ms-2">
 								<span>RHHS</span> Math Club
 							</p>
 						</div>
 					</NavBar.Brand>
+					<NavBar.Toggle
+						className="justify-self-end"
+						aria-controls="navbar-links"
+					/>
 
-					<NavBar className="justify-content-end p-0">
+					<NavBar.Collapse
+						id="navbar-links"
+						className="justify-content-end p-0"
+					>
 						{/* Navbar Content */}
-						<Nav className="nav-content">
+						<Nav className="nav-content text-end">
 							<Link to="/about-us" className="nav-link">
 								About Us
 							</Link>
@@ -39,7 +47,7 @@ function Navbar() {
 								Contact
 							</Link>
 
-							{user ? (
+							{/* {user ? (
 								<>
 									<Link to="/dashboard" className="nav-link">
 										Dashboard
@@ -63,11 +71,11 @@ function Navbar() {
 										Login
 									</Link>
 								</>
-							)}
+							)} */}
 						</Nav>
-					</NavBar>
+					</NavBar.Collapse>
 				</Container>
-				<Container className="schedule justify-content-center text-center p-0">
+				<Container className="schedule justify-content-center text-center p-0 d-none d-md-flex">
 					<p>Room 2029</p>
 					<p className="col-1"></p>
 					<p>Friday Weekly</p>

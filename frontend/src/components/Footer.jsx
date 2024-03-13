@@ -3,10 +3,13 @@ import React, { useContext } from "react";
 import { Navbar as NavBar, Nav, Container } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
-import AuthContext from "../context/AuthContext";
+import IconLink from "components/IconLink";
+import AuthContext from "context/AuthContext";
+
+import getSource from "utils/getSource";
 
 function Footer() {
-	let { user, logoutUser } = useContext(AuthContext);
+	// let { user, logoutUser } = useContext(AuthContext);
 
 	return (
 		<NavBar className="footer p-4">
@@ -15,7 +18,7 @@ function Footer() {
 				<NavBar.Brand as={Link} to="/" className="me-0 text-center">
 					<div className="d-flex align-items-center">
 						<img
-							src="/logo.png"
+							src={getSource("/images/logo.png")}
 							className="d-inline-block align-top img-white logo footer-logo"
 							alt="Logo"
 						/>
@@ -27,8 +30,8 @@ function Footer() {
 				</NavBar.Brand>
 
 				<NavBar>
-					{/* Footer Content */}
-					<Nav className="footer-list nav-content flex-column text-end ms-auto">
+					{/* Footer Routes */}
+					<Nav className="footer-routes nav-content flex-column text-end ms-auto">
 						<NavLink to="/" className="nav-link">
 							Home
 						</NavLink>
@@ -39,7 +42,7 @@ function Footer() {
 							Contact
 						</NavLink>
 
-						{user ? (
+						{/* {user ? (
 							<>
 								<NavLink to="/dashboard" className="nav-link">
 									Dashboard
@@ -57,7 +60,25 @@ function Footer() {
 									Login
 								</NavLink>
 							</>
-						)}
+						)} */}
+					</Nav>
+					{/* Footer Links */}
+					<Nav className="footer-links flex-column ms-1">
+						<IconLink
+							href="https://classroom.google.com/"
+							src="svg/icons/google-classroom.svg"
+							size="35px"
+						/>
+						<IconLink
+							href="https://discord.com/"
+							src="svg/icons/discord.svg"
+							size="35px"
+						/>
+						<IconLink
+							href="https://www.instagram.com/rhhs_math/"
+							src="svg/icons/instagram.svg"
+							size="35px"
+						/>
 					</Nav>
 				</NavBar>
 			</Container>

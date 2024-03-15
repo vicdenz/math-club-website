@@ -126,7 +126,7 @@ const ContactPage = () => {
 									placeholder="leonhard.euler@gmail.com"
 								/>
 								<Form.Control.Feedback type="invalid">
-									This field cannot be empty.
+									This is not a valid email address.
 								</Form.Control.Feedback>
 							</Form.Group>
 							<Form.Group className="mb-2" controlId="message">
@@ -143,7 +143,7 @@ const ContactPage = () => {
 									}
 								/>
 								<Form.Control.Feedback type="invalid">
-									This field cannot be empty.
+									Your message cannot be empty.
 								</Form.Control.Feedback>
 								<Form.Label
 									id="charCount"

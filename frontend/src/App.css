@@ -264,6 +264,11 @@ form #charCount {
 	font-size: 15px;
 }
 
+form .valid-feedback,
+form .invalid-feedback {
+	font-size: 15px !important;
+}
+
 .contact-btn {
 	font-family: "Kollektif";
 	background-color: var(--dark-green);

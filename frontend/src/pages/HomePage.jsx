@@ -36,6 +36,15 @@ const HomePage = () => {
 		return `${month} ${day}`;
 	};
 
+	let scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+			/* you can also use 'auto' behaviour 
+			 in place of 'smooth' */
+		});
+	};
+
 	return (
 		<div className="d-flex flex-column mx-5">
 			<div className="mt-5 mb-4">
@@ -87,9 +96,9 @@ const HomePage = () => {
 						Sign up to become a tutee!
 					</p>
 					<Link
-						reloadDocument
 						to="/contact"
 						className="nav-link card-link col-7 align-self-end py-2 text-center"
+						onClick={scrollToTop}
 					>
 						Click Here To Join Math Club!
 					</Link>

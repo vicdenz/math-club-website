@@ -11,17 +11,27 @@ import { Link } from "react-router-dom";
 const ContactPage = () => {
 	const maxCharCount = 200;
 	const [charCount, setCharCount] = useState(0);
+	const [validated, setValidated] = useState(false); // State for overall form validation
 
 	const handleMessage = async (e) => {
 		e.preventDefault();
 
-		const form = new FormData(e.currentTarget);
-		const body = {};
-		for (const [key, value] of form.entries()) {
-			body[key] = value;
-		}
+		const form = e.currentTarget;
 
-		sendData("contact", body);
+		if (form.checkValidity() === false) {
+			e.stopPropagation();
+		} else {
+			const formData = new FormData(form);
+			const body = {};
+
+			for (const [key, value] of formData.entries()) {
+				body[key] = value;
+			}
+
+			console.log(body);
+			// sendData("contact", body);
+		}
+		setValidated(true);
 	};
 
 	return (
@@ -75,39 +85,54 @@ const ContactPage = () => {
 						<Form
 							className="message-form p-3"
 							onSubmit={handleMessage}
+							noValidate
+							validated={validated}
 						>
 							<Form.Group className="mb-2" controlId="firstName">
 								<Form.Label>First Name</Form.Label>
 								<Form.Control
+									required
 									type="text"
 									maxLength={40}
 									name="firstName"
 									placeholder="Leonhard"
 								/>
+								<Form.Control.Feedback type="invalid">
+									This field cannot be empty.
+								</Form.Control.Feedback>
 							</Form.Group>
 
 							<Form.Group className="mb-2" controlId="lastName">
 								<Form.Label>Last Name</Form.Label>
 								<Form.Control
+									required
 									type="text"
 									maxLength={60}
 									name="lastName"
 									placeholder="Euler"
 								/>
+								<Form.Control.Feedback type="invalid">
+									This field cannot be empty.
+								</Form.Control.Feedback>
 							</Form.Group>
 
 							<Form.Group className="mb-2" controlId="email">
 								<Form.Label>Your Email Address</Form.Label>
 								<Form.Control
+									required
 									type="email"
 									maxLength={100}
 									name="email"
 									placeholder="leonhard.euler@gmail.com"
 								/>
+								<Form.Control.Feedback type="invalid">
+									This field cannot be empty.
+								</Form.Control.Feedback>
 							</Form.Group>
 							<Form.Group className="mb-2" controlId="message">
 								<Form.Label>Your Message</Form.Label>
 								<Form.Control
+									required
 									as="textarea"
 									rows={3}
 									name="message"
@@ -117,6 +142,9 @@ const ContactPage = () => {
 										setCharCount(e.target.value.length)
 									}
 								/>
+								<Form.Control.Feedback type="invalid">
+									This field cannot be empty.
+								</Form.Control.Feedback>
 								<Form.Label
 									id="charCount"
 									className="d-flex justify-content-end mb-0"

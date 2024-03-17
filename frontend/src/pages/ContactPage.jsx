@@ -61,17 +61,17 @@ const ContactPage = () => {
 							<div className="d-flex justify-content-start">
 								<IconLink
 									href="https://classroom.google.com/"
-									src="/svg/icons/google-classroom.svg"
+									src="svg/icons/google-classroom.svg"
 									className="me-2"
 								/>
 								<IconLink
 									href="https://discord.com/"
-									src="/svg/icons/discord.svg"
+									src="svg/icons/discord.svg"
 									className="me-2"
 								/>
 								<IconLink
 									href="https://www.instagram.com/rhhs_math/"
-									src="/svg/icons/instagram.svg"
+									src="svg/icons/instagram.svg"
 								/>
 							</div>
 						</div>

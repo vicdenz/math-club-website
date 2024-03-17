@@ -28,8 +28,7 @@ const ContactPage = () => {
 				body[key] = value;
 			}
 
-			console.log(body);
-			// sendData("contact", body);
+			sendData("contact", body);
 		}
 		setValidated(true);
 	};

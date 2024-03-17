@@ -18,7 +18,7 @@ function Footer() {
 				<NavBar.Brand as={Link} to="/" className="me-0 text-center">
 					<div className="d-flex align-items-center">
 						<img
-							src={getSource("/images/logo.png")}
+							src={getSource("images/logo.png")}
 							className="d-inline-block align-top img-white logo footer-logo"
 							alt="Logo"
 						/>

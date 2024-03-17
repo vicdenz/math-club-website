@@ -21,7 +21,7 @@ function Navbar() {
 					>
 						<div className="d-flex align-items-center">
 							<img
-								src={getSource("/images/logo.png")}
+								src={getSource("images/logo.png")}
 								className="d-inline-block align-top nav-logo"
 							/>
 							<p className="nav-title mb-0 ms-2">

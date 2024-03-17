@@ -22,27 +22,30 @@ export const AuthProvider = ({ children }) => {
 	let [loading, setLoading] = useState(true);
 
 	let loginUser = async (userData) => {
-		let response = await fetch("http://127.0.0.1:8000/api/token/", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				username: userData.username,
-				password: userData.password,
-			}),
-		});
-		let data = await response.json();
+		try {
+			let response = await fetch("http://127.0.0.1:8000/api/token/", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					username: userData.username,
+					password: userData.password,
+				}),
+			});
+			let data = await response.json();
 
-		if (response.status === 200) {
-			setAuthTokens(data);
-			setUser(jwtDecode(data.access));
-			localStorage.setItem("authTokens", JSON.stringify(data));
+			if (response.status === 200) {
+				setAuthTokens(data);
+				setUser(jwtDecode(data.access));
+				localStorage.setItem("authTokens", JSON.stringify(data));
 
-			console.log("Hello");
-			navigate("/");
-		} else {
-			alert("Something went wrong!");
+				navigate("/");
+			} else {
+				alert("Something went wrong during log in!");
+			}
+		} catch (err) {
+			alert("Something went wrong during log in!");
 		}
 	};
 

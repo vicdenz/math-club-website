@@ -57,30 +57,45 @@ const HomePage = () => {
 			</div>
 
 			<Card align="start" colWidth={4} title="Upcoming Events">
-				{events.map((event) => (
-					<CardItem
-						key={event.id}
-						event={event}
-						align="start"
-						datetime={event.datetime}
-						name={event.name}
-						info={"Rm. " + event.room}
-					/>
-				))}
+				{events === false ? (
+					events.map((event) => (
+						<CardItem
+							key={event.id}
+							event={event}
+							align="start"
+							datetime={event.datetime}
+							name={event.name}
+							info={"Rm. " + event.room}
+						/>
+					))
+				) : (
+					<p className="card-p text-start ms-2">
+						There are no events soon.
+					</p>
+				)}
 			</Card>
 			<Card align="end" colWidth={4} title="Upcoming Contests">
-				{contests.map((contest) => (
-					<CardItem
-						key={contest.id}
-						contest={contest}
-						align="end"
-						datetime={contest.datetime}
-						name={contest.name + " | " + getContestTitle(contest)}
-						info={
-							"Sign Up Deadline: " + getContestDeadline(contest)
-						}
-					/>
-				))}
+				{contests === false ? (
+					contests.map((contest) => (
+						<CardItem
+							key={contest.id}
+							contest={contest}
+							align="end"
+							datetime={contest.datetime}
+							name={
+								contest.name + " | " + getContestTitle(contest)
+							}
+							info={
+								"Sign Up Deadline: " +
+								getContestDeadline(contest)
+							}
+						/>
+					))
+				) : (
+					<p className="card-p text-end ms-2">
+						There are no contests soon.
+					</p>
+				)}
 			</Card>
 
 			<Card align="start" colWidth={6} title="Looking To Join?">

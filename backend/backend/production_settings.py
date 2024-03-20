@@ -96,8 +96,8 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-	"https://*.up.railway.app", 
-	# NOTE: Place your custom url here if any
+	"https://math-club-website-production.up.railway.app", 
+	"https://www.rhhsmathclub.ca"
 ]
 
 MIDDLEWARE = [

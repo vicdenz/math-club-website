@@ -15,6 +15,9 @@ const HomePage = () => {
 		getData("contests", setContests);
 	}, []);
 
+	console.log(events);
+	console.log(contests);
+
 	let getContestTitle = (contest) => {
 		const contestTitleLength = 13;
 
@@ -57,11 +60,10 @@ const HomePage = () => {
 			</div>
 
 			<Card align="start" colWidth={4} title="Upcoming Events">
-				{events === false ? (
+				{events.length > 0 ? (
 					events.map((event) => (
 						<CardItem
 							key={event.id}
-							event={event}
 							align="start"
 							datetime={event.datetime}
 							name={event.name}
@@ -75,11 +77,10 @@ const HomePage = () => {
 				)}
 			</Card>
 			<Card align="end" colWidth={4} title="Upcoming Contests">
-				{contests === false ? (
+				{contests.length > 0 ? (
 					contests.map((contest) => (
 						<CardItem
 							key={contest.id}
-							contest={contest}
 							align="end"
 							datetime={contest.datetime}
 							name={

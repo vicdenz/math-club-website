@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
 
-const CardItem = ({ align, datetime, name, info }) => {
+const CardItem = ({ key, align, datetime, name, info }) => {
 	let currentDate = new Date(datetime);
 	let month = currentDate.toLocaleString("en-us", { month: "short" }); // Get first three letters of the month
 	let day = currentDate.getDate(); // Get the day of the month
@@ -41,7 +41,10 @@ const CardItem = ({ align, datetime, name, info }) => {
 	}
 
 	return (
-		<div className="d-flex flex-row card-item mb-3 align-items-center">
+		<div
+			className="d-flex flex-row card-item mb-3 align-items-center"
+			key={key}
+		>
 			{content}
 		</div>
 	);

@@ -23,16 +23,19 @@ export const AuthProvider = ({ children }) => {
 
 	let loginUser = async (userData) => {
 		try {
-			let response = await fetch("http://127.0.0.1:8000/api/token/", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					username: userData.username,
-					password: userData.password,
-				}),
-			});
+			let response = await fetch(
+				`${process.env.BACKEND_URL}/api/token/`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						username: userData.username,
+						password: userData.password,
+					}),
+				}
+			);
 			let data = await response.json();
 
 			if (response.status === 200) {
@@ -56,13 +59,16 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	let updateToken = async () => {
-		let response = await fetch("http://127.0.0.1:8000/api/token/refresh/", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ refresh: authTokens?.refresh }),
-		});
+		let response = await fetch(
+			`${process.env.BACKEND_URL}/api/token/refresh/`,
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ refresh: authTokens?.refresh }),
+			}
+		);
 
 		let data = await response.json();
 

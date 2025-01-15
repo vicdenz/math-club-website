@@ -15,9 +15,6 @@ const HomePage = () => {
 		getData("contests", setContests);
 	}, []);
 
-	console.log(events);
-	console.log(contests);
-
 	let getContestTitle = (contest) => {
 		const contestTitleLength = 13;
 
@@ -52,70 +49,22 @@ const HomePage = () => {
 		<div className="d-flex flex-column mx-5">
 			<div className="mt-5 mb-4">
 				<Header title="RHHS Math Club">
-					<span className="home-text">
-						Unlocking Math's Wonders: Where Inclusivity and
-						Friendship Count, and Everyone's Welcome!
-					</span>
+					<span className="home-text">Unlocking Math's Wonders: Where Inclusivity and Friendship Count, and Everyone's Welcome!</span>
 				</Header>
 			</div>
 
 			<Card align="start" colWidth={4} title="Upcoming Events">
-				{events.length > 0 ? (
-					events.map((event) => (
-						<CardItem
-							key={event.id}
-							align="start"
-							datetime={event.datetime}
-							name={event.name}
-							info={"Rm. " + event.room}
-						/>
-					))
-				) : (
-					<p className="card-p text-start ms-2">
-						There are no events soon.
-					</p>
-				)}
+				{events.length > 0 ? events.map((event) => <CardItem key={event.id} align="start" datetime={event.datetime} name={event.name} info={"Rm. " + event.room} />) : <p className="card-p text-start ms-2">There are no events soon.</p>}
 			</Card>
 			<Card align="end" colWidth={4} title="Upcoming Contests">
-				{contests.length > 0 ? (
-					contests.map((contest) => (
-						<CardItem
-							key={contest.id}
-							align="end"
-							datetime={contest.datetime}
-							name={
-								contest.name + " | " + getContestTitle(contest)
-							}
-							info={
-								"Sign Up Deadline: " +
-								getContestDeadline(contest)
-							}
-						/>
-					))
-				) : (
-					<p className="card-p text-end ms-2">
-						There are no contests soon.
-					</p>
-				)}
+				{contests.length > 0 ? contests.map((contest) => <CardItem key={contest.id} align="end" datetime={contest.datetime} name={contest.name + " | " + getContestTitle(contest)} info={"Sign Up Deadline: " + getContestDeadline(contest)} />) : <p className="card-p text-end ms-2">There are no contests soon.</p>}
 			</Card>
 
 			<Card align="start" colWidth={6} title="Looking To Join?">
 				<div className="d-flex flex-column card-p">
-					<p className="mb-2">
-						Are you struggling with math? Or do you simply want to
-						learn something new? If you answered yes to any of those
-						questions then you've come to the right place!
-					</p>
-					<p className="mb-4">
-						Whether it be simple algebra or complex calculus, our
-						talented team of tutors and executives are here to help!
-						Sign up to become a tutee!
-					</p>
-					<Link
-						to="/contact"
-						className="nav-link card-link col-7 align-self-end py-2 text-center"
-						onClick={scrollToTop}
-					>
+					<p className="mb-2">Are you struggling with math? Or do you simply want to learn something new? If you answered yes to any of those questions then you've come to the right place!</p>
+					<p className="mb-4">Whether it be simple algebra or complex calculus, our talented team of tutors and executives are here to help! Sign up to become a tutee!</p>
+					<Link to="/contact" className="nav-link card-link col-7 align-self-end py-2 text-center" onClick={scrollToTop}>
 						Click Here To Join Math Club!
 					</Link>
 				</div>

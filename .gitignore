@@ -127,3 +127,7 @@ dmypy.json
 cython_debug/
 
 .prettierrc
+
+static
+staticfiles
+dist

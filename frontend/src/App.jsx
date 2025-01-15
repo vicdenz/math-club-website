@@ -1,13 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import {
-	BrowserRouter as Router,
-	createBrowserRouter,
-	RouterProvider,
-	Routes,
-	Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, createBrowserRouter, RouterProvider, Routes, Route } from "react-router-dom";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
@@ -46,7 +40,11 @@ function Layout() {
 
 const router = createBrowserRouter([
 	{
-		element: <Layout />,
+		element: (
+			<AuthProvider>
+				<Layout />
+			</AuthProvider>
+		),
 		children: [
 			{
 				path: "/",
@@ -59,6 +57,10 @@ const router = createBrowserRouter([
 			{
 				path: "/contact",
 				element: <ContactPage />,
+			},
+			{
+				path: "/login",
+				element: <LoginPage />,
 			},
 			{
 				path: "*",

@@ -231,8 +231,7 @@ p {
 	background-size: cover;
 	background-position: center center;
 
-	box-shadow: color-mix(in srgb, var(--light-green), transparent 15%) 0px 5px
-		15px 0px;
+	box-shadow: color-mix(in srgb, var(--light-green), transparent 15%) 0px 5px 15px 0px;
 
 	border-radius: 50px;
 }
@@ -267,6 +266,10 @@ form #charCount {
 form .valid-feedback,
 form .invalid-feedback {
 	font-size: 15px !important;
+}
+
+form .form-error {
+	font-size: 16px !important;
 }
 
 .contact-btn {

@@ -17,11 +17,7 @@ function Footer() {
 				{/* Logo and Footer Title */}
 				<NavBar.Brand as={Link} to="/" className="me-0 text-center">
 					<div className="d-flex align-items-center">
-						<img
-							src={getSource("images/logo.png")}
-							className="d-inline-block align-top img-white logo footer-logo"
-							alt="Logo"
-						/>
+						<img src={getSource("images/logo.png")} className="d-inline-block align-top img-white logo footer-logo" alt="Logo" />
 						<div className="footer-title d-flex flex-column ms-2">
 							<p className="fw-bold mb-0">RHHS Math Club</p>
 							<p className="mb-0">Sapere Aude</p>
@@ -40,6 +36,9 @@ function Footer() {
 						</NavLink>
 						<NavLink to="/contact" className="nav-link">
 							Contact
+						</NavLink>
+						<NavLink to="/login" className="nav-link">
+							Login
 						</NavLink>
 
 						{/* {user ? (
@@ -64,21 +63,9 @@ function Footer() {
 					</Nav>
 					{/* Footer Links */}
 					<Nav className="footer-links flex-column ms-1">
-						<IconLink
-							href="https://classroom.google.com/"
-							src="svg/icons/google-classroom.svg"
-							size="35px"
-						/>
-						<IconLink
-							href="https://discord.com/"
-							src="svg/icons/discord.svg"
-							size="35px"
-						/>
-						<IconLink
-							href="https://www.instagram.com/rhhs_math/"
-							src="svg/icons/instagram.svg"
-							size="35px"
-						/>
+						<IconLink href="https://classroom.google.com/c/NjIxMzE0NjM1NjEx?cjc=igaatel/" src="svg/icons/google-classroom.svg" size="35px" />
+						<IconLink href="https://discord.com/invite/EQmNaeEsRu/" src="svg/icons/discord.svg" size="35px" />
+						<IconLink href="https://www.instagram.com/rhhs_math/" src="svg/icons/instagram.svg" size="35px" />
 					</Nav>
 				</NavBar>
 			</Container>

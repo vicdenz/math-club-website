@@ -11,6 +11,7 @@ export default defineConfig(({ command, mode }) => {
 	}
 
 	return {
+		base: "/static/",
 		plugins: [react()],
 		server: {
 			port: 3000,

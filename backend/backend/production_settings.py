@@ -96,6 +96,7 @@ SIMPLE_JWT = {
 
 CORS_ALLOWED_ORIGINS = [
 	"https://math-club-website-production.up.railway.app", 
+	"https://rhhsmathclub.com"
 	"https://www.rhhsmathclub.com"
 ]
 

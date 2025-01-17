@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig(({ command, mode }) => {
 	let backendUrl;
 	if (mode === "production") {
-		backendUrl = "https://www.rhhsmathclub.com";
+		backendUrl = "https://rhhsmathclub.com";
 	} else if (mode === "development") {
 		backendUrl = "http://127.0.0.1:8000";
 	}
